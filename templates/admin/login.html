@@ -1,0 +1,34 @@
+{% extends 'admin/login.html' %}
+{% load i18n %}
+{% block head %}
+{#重写head block 可以添加自己的一些头部元素，例如seo信息等#}
+    <meta name="keywords" content="simpleui,django">
+    <meta name="description" content="simpleui是一个django admin theme 主题 。基于element-ui+vue开发的主题，重写和优化90%以上的页面。 ">
+{% endblock %}
+
+
+{% block header %}
+    <div class="header">{{ site_header }}</div>
+     <el-alert
+        title="成功提示的文案"
+        type="success"
+        :show-icon="false">
+        <div slot="title">
+            <div>欢迎使用航班元数据爬取网站</div>
+        <div>账号：admin，密码：123456</div>
+        </div>
+      </el-alert>
+{% endblock %}
+
+
+{% block particles %}
+    {{ block.super }}
+    <script type="text/javascript">
+        window.addEventListener('load', function () {
+            if(loginApp){
+                loginApp.username = 'admin';
+                loginApp.password = '123456';
+            }
+        });
+    </script>
+{% endblock %}
