@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admindocs',
     'mdeditor',
+    'waypoints',
 ]
 
 MIDDLEWARE = [
@@ -74,24 +75,24 @@ WSGI_APPLICATION = 'flightMetaDataCrawl.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#       'ENGINE': 'djongo',
-#       'ENFORCE_SCHEMA': True,
-#       'NAME': 'flight_metadata',
-#       'CLIENT': {
-#           'host': 'whdev195',
-#           'port': 27017,
-#       }
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+      'ENGINE': 'djongo',
+      'ENFORCE_SCHEMA': True,
+      'NAME': 'flight_metadata',
+      'CLIENT': {
+          'host': '127.0.0.1',
+          'port': 27017,
+      }
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
